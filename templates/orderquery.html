@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+     <script src="//code.jquery.com/jquery-1.11.3.min.js"></script>
+    <script src="{{static_url('js/pay.js')}}"></script>
+    <title>订单查询</title>
+</head>
+<body>
+<form  method="post"  >
+		<table width="100%" border="0">
+
+		<tr>
+				<td colspan="2" height="2" bgcolor="#ff7300"></td>
+			</tr>
+            <tr>
+				<td width="24%" align="right">服务名称：</td>
+				<td width="76%"><input type="text" name="service"
+					id="service" value="orderQuery"></td>
+			</tr>
+			<tr>
+				<td width="24%" align="right">商户编号：</td>
+				<td width="76%"><input type="text" name="merchantId"
+					id="merchantId" value="001016062701807"></td>
+			</tr>
+
+            <tr>
+				<td width="24%" align="right">商品编码方式：</td>
+				<td width="76%"><input type="text" name="inputCharset"
+					id="inputCharset" value="UTF-8"></td>
+			</tr>
+			<tr>
+				<td width="24%" align="right">外部订单号：</td>
+				<td width="76%"><input type="text" name="outOrderId"
+					id="outOrderId" ></td>
+			</tr>
+			<tr>
+				<td width="24%" align="right">签名方式：</td>
+				<td width="76%"><input type="text" name="signType" id="signType"
+					value="RSA"></td>
+			</tr>
+            <tr>
+				<td width="24%" align="right">版本号：</td>
+				<td width="76%"><input type="text" name="version" id="version"
+					value="1"></td>
+			</tr>
+			<tr>
+				<td width="24%" align="right">提交：</td>
+				<td width="76%"><input type="submit" name="submit" id="submit"
+					value="查询"></td>
+			</tr>
+        </table>
+</form>
+</body>
+</html>

@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+     <script src="//code.jquery.com/jquery-1.11.3.min.js"></script>
+    <script src="{{static_url('js/pay.js')}}"></script>
+    <title>商银信网关网银支付</title>
+</head>
+<body>
+	<!--<a href="queryOrder.jsp">订单查询</a>
+	<a href="refundView.jsp">订单退款</a>
+	<a href="commonPay.jsp">收银台付款</a>
+	<a href="../fastPayAPI/index.jsp">快捷API支付</a>
+	<a href="auth.jsp">实名认证</a>
+	<a href="scanCodeAPI.jsp">扫码支付</a>-->
+	<form  method="post"  >
+		<table width="100%" border="0">
+
+			<tr>
+				<td colspan="2" height="2" bgcolor="#ff7300"></td>
+			</tr>
+			<tr>
+				<td width="24%" align="right">商户编号：</td>
+				<td width="76%"><input type="text" name="merchantId"
+					id="merchantId" value="001016062701807"></td>
+			</tr>
+			<tr>
+				<td width="24%" align="right">商品名称：</td>
+				<td width="76%"><input type="text" name="subject" id="subject"
+					value="test"></td>
+			</tr>
+			<tr>
+				<td width="24%" align="right">商品价格：</td>
+				<td width="76%"><input type="text" name="transAmt"
+					id="transAmt" value="0.01"></td>
+			</tr>
+			<tr>
+				<td width="24%" align="right">外部订单号：</td>
+				<td width="76%"><input type="text" name="outOrderId"
+					id="outOrderId"></td>
+			</tr>
+			<tr>
+				<td width="24%" align="right">商品描述：</td>
+				<td width="76%"><input type="text" name="body" id="body"
+					value="body"></td>
+			</tr>
+
+			<tr>
+				<td width="24%" align="right">外部账户ID：</td>
+				<td width="76%"><input type="text" name="outAcctId"
+					id="outAcctId" value="lidong"></td>
+			</tr>
+			<tr>
+				<td width="24%" align="right">支付方式：</td>
+				<td width="76%">
+                    <input type="text" name="payMethod" id="payMethod"
+					value="bankPay">
+
+				</td>
+			</tr>
+			<tr>
+				<td width="24%" align="right">（网上银行必要参数）默认银行卡编号：</td>
+				<td width="76%"><select name="defaultBank" id="defaultBank">
+						<option value="ABC">中国农业银行</option>
+						<option value="BJBANK">北京银行</option>
+						<option value="BJRCB">北京农商银行</option>
+						<option value="BOC">中国银行</option>
+						<option value="CEB">中国光大银行</option>
+						<option value="CIB">兴业银行</option>
+						<option value="CITIC">中信银行</option>
+						<option value="CMBC">中国民生银行</option>
+						<option value="ICBC">中国工商银行</option>
+						<option value="NBBANK">宁波银行</option>
+						<option value="SDB">深圳发展银行</option>
+						<option value="HXBANK">华夏银行</option>
+						<option value="SPDB">浦发银行</option>
+						<option value="PSBC">中国邮政储蓄银行</option>
+						<option value="HZCB">杭州银行</option>
+						<option value="NJCB">南京银行</option>
+						<option value="COMM">交通银行</option>
+					    <option value="CMB">招商银行</option>
+						<option value="CCB">中国建设银行</option>
+						<option value="GDB">广发银行</option>
+
+				</select></td>
+			</tr>
+			<tr>
+				<td width="24%" align="right">（网上银行必要参数）网银类型：</td>
+				<td width="76%"><select name="channel" id="channel">
+						<option value="B2C">个人网银</option>
+						<option value="B2B">企业网银</option>
+				</select></td>
+			</tr>
+
+			<tr>
+				<td width="24%" align="right">（网上银行支持类型）卡类标识：</td>
+				<td width="76%"><select name="cardAttr" id="cardAttr">
+						<option value="01">储蓄卡</option>
+						<option value="92">信用卡</option>
+				</select></td>
+			</tr>
+			<tr>
+				<td width="24%" align="right">加密方式：</td>
+				<td width="76%"><select name="signType" id="signType">
+						<option value="RSA">RSA秘钥</option>
+						<option value="CA">CA证书</option>
+				</select></td>
+			</tr>
+
+
+			<tr>
+				<td width="24%" align="right">returnUrl：</td>
+				<td width="76%"><input type="text" name="returnUrl"
+					id="returnUrl" style="width:400px;" value="http://192.168.9.21:8080/allscore/">(回调地址ip和端口需要更具测试地址更改)</td>
+			</tr>
+
+			<tr>
+				<td width="24%" align="right">notifyUrl：</td>
+				<td width="76%"><input type="text" name="notifyUrl"
+					id="notifyUrl" style="width:400px;" value="http://192.168.9.21:8080/allscore/">(回调地址ip和端口需要更具测试地址更改)</td>
+			</tr>
+			<tr>
+				<td width="24%" align="right">ditailUrl：</td>
+				<td width="76%"><input type="text" name="detailUrl"
+					id="detailUrl" style="width:400px;" value="http://192.168.9.13:8080/allscore/allscore_detail.jsp"></td>
+			</tr>
+				<tr>
+				<td width="24%" align="right">接口版本号：</td>
+				<td width="76%"><select name="version" id="version">
+						<option value="1">1</option>
+						<option value="">老版本</option>
+				</select></td>
+			</tr>
+			<tr>
+				<td align="right">操作：</td>
+				<td><input type="button" name="submit" id="submit" value="一键支付" /></td>
+			</tr>
+		</table>
+	</form>
+</body>
+</html>

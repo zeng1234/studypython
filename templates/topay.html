@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>请求确认支付</title>
+</head>
+<body>
+<form action="http://58.132.206.38:8090/olgateway/serviceDirect.htm" method="post" target="_blank" >
+		<table width="100%" border="0">
+
+			<tr>
+				<td colspan="2" height="2" bgcolor="#ff7300"></td>
+			</tr>
+            <tr>
+				<td width="24%" align="right">服务名称：</td>
+				<td width="76%"><input type="text" name="service"
+					id="service" value="{{service}}"></td>
+			</tr>
+			<tr>
+				<td width="24%" align="right">商户编号：</td>
+				<td width="76%"><input type="text" name="merchantId"
+					id="merchantId" value="{{merchantId}}"></td>
+			</tr>
+			<tr>
+				<td width="24%" align="right">商品名称：</td>
+				<td width="76%"><input type="text" name="subject" id="subject"
+					value="{{subject}}"></td>
+			</tr>
+			<tr>
+				<td width="24%" align="right">商品价格：</td>
+				<td width="76%"><input type="text" name="transAmt"
+					id="transAmt" value="{{transAmt}}"></td>
+			</tr>
+            <tr>
+				<td width="24%" align="right">商品编码方式：</td>
+				<td width="76%"><input type="text" name="inputCharset"
+					id="inputCharset" value="{{inputCharset}}"></td>
+			</tr>
+			<tr>
+				<td width="24%" align="right">外部订单号：</td>
+				<td width="76%"><input type="text" name="outOrderId"
+					id="outOrderId" value="{{outOrderId}}"></td>
+			</tr>
+			<tr>
+				<td width="24%" align="right">商品描述：</td>
+				<td width="76%"><input type="text" name="body" id="body"
+					value="{{body}}"></td>
+			</tr>
+
+			<tr>
+				<td width="24%" align="right">外部账户ID：</td>
+				<td width="76%"><input type="text" name="outAcctId"
+					id="outAcctId" value="{{outAcctId}}"></td>
+			</tr>
+			<tr>
+				<td width="24%" align="right">支付方式：</td>
+				<td width="76%">
+                    <input type="text" name="payMethod" id="payMethod"
+					value="{{payMethod}}">
+
+				</td>
+			</tr>
+			<tr>
+				<td width="24%" align="right">（网上银行必要参数）默认银行卡编号：</td>
+				<td width="76%"><input type="text" name="defaultBank" id="defaultBank" value="{{defaultBank}}">
+
+				</td>
+			</tr>
+			<tr>
+                <td width="24%" align="right">（网上银行必要参数）网银类型：</td>
+				<td width="76%"><input name="channel" id="channel" value="{{channel}}"></td>
+
+			</tr>
+
+			<tr>
+				<td width="24%" align="right">（网上银行支持类型）卡类标识：</td>
+				<td width="76%"><input name="cardAttr" id="cardAttr" value="{{cardAttr}}">
+				</input></td>
+			</tr>
+			<tr>
+				<td width="24%" align="right">加密方式：</td>
+				<td width="76%"><input  type="text" name="signType" id="signType" value="{{signType}}">
+				</td>
+			</tr>
+
+
+			<tr>
+				<td width="24%" align="right">returnUrl：</td>
+				<td width="76%"><input type="text" name="returnUrl"
+					id="returnUrl" style="width:400px;" value="{{returnUrl}}">(回调地址ip和端口需要更具测试地址更改)</td>
+			</tr>
+
+			<tr>
+				<td width="24%" align="right">notifyUrl：</td>
+				<td width="76%"><input type="text" name="notifyUrl"
+					id="notifyUrl" style="width:400px;" value="{{notifyUrl}}">(回调地址ip和端口需要更具测试地址更改)</td>
+			</tr>
+			<tr>
+				<td width="24%" align="right">ditailUrl：</td>
+				<td width="76%"><input type="text" name="detailUrl"
+					id="detailUrl" style="width:400px;" value="{{detailUrl}}"></td>
+			</tr>
+				<tr>
+				<td width="24%" align="right">接口版本号：</td>
+				<td width="76%"><input name="version" id="version" value="{{version}}">
+
+				</input></td>
+			</tr>
+            <tr>
+				<td width="24%" align="right">签名：</td>
+				<td width="76%"><input name="sign" id="sign" value="{{sign}}">
+				</input></td>
+			</tr>
+			<tr>
+				<td align="right">操作：</td>
+				<td><input type="submit" name="submit" id="submit" value="确认支付" /></td>
+			</tr>
+		</table>
+	</form>
+</body>
+</html>
